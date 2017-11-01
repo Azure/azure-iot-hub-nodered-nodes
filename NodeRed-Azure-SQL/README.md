@@ -35,15 +35,15 @@ Use `msg.payload` to query data into Database.
 
 ## Read Query
 ### Input Object:
-Ex: `msg.payload` -> `{"action": "Q", "query" : "SELECT * FROM table WHERE firstName = 'Lucas'"};`
+Ex: `msg.payload` -> `{"action": "Q", "query" : "SELECT * FROM table WHERE firstName = 'John'"};`
 
 ### Response Object:
 A JSON object will be returned for each row of output in this format:
 ```
 { 
-  Name: "Jane",
+  Name: "John",
   LastName: "Doe",
-  Age: 25
+  Age: 29
 }
 ```
 
