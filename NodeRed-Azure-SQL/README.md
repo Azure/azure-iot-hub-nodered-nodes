@@ -3,7 +3,7 @@ Node-Red node to connect to Azure SQL Database
 
 <a href="http://nodered.org" target="_new">Node-RED</a> nodes to talk to Azure SQL Database.
 
-Some code of Azure are under MIT License.
+Some code of Azure is under MIT License.
 
 Install
 -------
@@ -21,7 +21,7 @@ Azure node. Can be used to work with Azure SQL Database
    * Select (query) into Azure SQL
    * Insert (query) into Azure SQL
 
-## How to use:
+# How to use:
 
 You must create the database in Azure first to use Azure SQL node in Node-RED. You will use:
 - Server address
@@ -31,16 +31,14 @@ You must create the database in Azure first to use Azure SQL node in Node-RED. Y
 
 Use `msg.payload` to query data into Database.
 
-Ex: `msg.payload` -> `{"action": "Q", "query" : "SELECT * FROM table WHERE firstName = 'Lucas'"};`
-Ex: `msg.payload` -> `{ "action": "I", "query": "insert into table (Name, LastName, Age) VALUES ('Jane', 'Doe', '25')" };`
+------------
 
+## Read Query
+### Input Object:
+Ex: `msg.payload` -> `{"action": "Q", "query" : "SELECT * FROM table WHERE firstName = 'Lucas'"};`
 
 ### Response Object:
-**Read Query**
-
-Json object will be returned for each row of output in this format:
-
-Object output
+A JSON object will be returned for each row of output in this format:
 ```
 { 
   Name: "Jane",
@@ -49,9 +47,14 @@ Object output
 }
 ```
 
-**Write Query**
+--------
 
-String output
+## Write Query
+### Input Object:
+Ex: `msg.payload` -> `{ "action": "I", "query": "insert into table (Name, LastName, Age) VALUES ('Jane', 'Doe', '25')" };`
+
+### Response Object:
+A String output will be returned for each insert query in this format:
 
 ```
 "Insert Complete. ID of inserted item is 1017"
